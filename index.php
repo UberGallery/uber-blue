@@ -68,7 +68,7 @@
         <div id="credit">Powered by, <a href="http://www.ubergallery.net">UberGallery</a></div>
     </div>
 </div>
-<!-- End UberGallery - Dual licensed under the MIT & GPL license -->
+<!-- End UberGallery - Distributed under the MIT license: http://www.opensource.org/licenses/mit-license.php -->
 
 </body>
 </html>
