@@ -9,7 +9,7 @@
     <link rel="stylesheet" type="text/css" href="<?php echo THEMEPATH; ?>/style.css" />
     <?php echo $gallery->getColorboxStyles(5); ?>
     
-    <script type="text/javascript" src="//ajax.googleapis.com/ajax/libs/jquery/1.9.0/jquery.min.js"></script>
+    <script type="text/javascript" src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
     <?php echo $gallery->getColorboxScripts(); ?>
     
     <?php file_exists('googleAnalytics.inc') ? include('googleAnalytics.inc') : false; ?>
