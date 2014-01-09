@@ -13,6 +13,21 @@
     <?php echo $gallery->getColorboxScripts(); ?>
 
     <?php file_exists('googleAnalytics.inc') ? include('googleAnalytics.inc') : false; ?>
+<style>
+#galleryList > li.dir > a > div {
+<?php 
+  $config = $gallery->getConfiguration();
+  echo 'width:' . $config['thumbnail']['width'] . "px;\n";
+  echo 'height:' . ($config['thumbnail']['height']*0.8) . "px;\n";
+  echo 'margin: ' . ($config['thumbnail']['height']*0.1) . 'px auto;';
+?>
+    color: #DDDDDD;
+    font-weight: bold;
+    text-align: center;
+    word-wrap: break-word;
+}
+
+</style>
 
 </head>
 <body>
@@ -21,8 +36,16 @@
 <div id="galleryWrapper">
     <h1>UberGallery</h1>
     <div class="line"></div>
+  <ul id="breadcrumbs" class="clearfix">
+    <?php $bc = $gallery->getBreadCrumbs();
+          foreach($bc as $name => $url): ?>
+    <li class="separator"><span>/</span></li><li class="link"><a href="<?= $url ?>"><?= $name ?></a></li>
+    <?php endforeach; ?>
+  </ul>
 
-    <?php if($gallery->getSystemMessages()): ?>
+  <div class="line"></div>
+  
+      <?php if($gallery->getSystemMessages()): ?>
         <ul id="systemMessages">
             <?php foreach($gallery->getSystemMessages() as $message): ?>
                 <li class="<?php echo $message['type']; ?>">
@@ -30,13 +53,18 @@
                 </li>
             <?php endforeach; ?>
         </ul>
+        <div class="line"></div>
     <?php endif; ?>
 
     <div id="galleryListWrapper">
         <?php if (!empty($galleryArray) && $galleryArray['stats']['total_images'] > 0): ?>
             <ul id="galleryList" class="clearfix">
                 <?php foreach ($galleryArray['images'] as $image): ?>
+                  <?php if ($image['is_dir']): ?>
+                    <li class="dir"><a href="<?php echo $image['dir_path']; ?>" title="<?php echo $image['dir_title']; ?>" class=""><div><?php echo $image['dir_title']; ?></div></a></li>
+                  <?php else: ?>
                     <li><a href="<?php echo $image['file_path']; ?>" title="<?php echo $image['file_title']; ?>" rel="colorbox"><img src="<?php echo $image['thumb_path']; ?>" alt="<?php echo $image['file_title']; ?>"/></a></li>
+                  <?php endif; ?>
                 <?php endforeach; ?>
             </ul>
         <?php endif; ?>

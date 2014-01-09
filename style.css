@@ -78,6 +78,7 @@ h1 {
     border-bottom: 1px solid #204656;
     display: block;
     padding: 4px;
+    text-decoration: none;
 }
 
 #galleryList li a:hover {
@@ -170,6 +171,52 @@ h1 {
     padding: 3px 6px;
 }
 
+/* ---------------------------------------- */
+/* ----|  BREADCRUMBS |-------------------- */
+/* ---------------------------------------- */
+
+#breadcrumbs {
+    color: #FFF;
+    font-size: .95em;
+    margin: 0 !important;
+    padding: 0 !important;
+    text-align: center;
+}
+
+#breadcrumbs li {
+    border: 1px solid transparent;
+    display: block;
+    float: left;
+    list-style: none;
+    margin-right: 1px;
+    padding: 4px 6px;
+}
+
+#breadcrumbs li.link:hover {
+    background-color: #1E2D34;
+    border-top: 1px solid #132228;
+    border-left: 1px solid #132228;
+    border-right: 1px solid #204656;
+    border-bottom: 1px solid #204656;
+}
+
+#breadcrumbs li.separator {
+    padding: 4px 3px;
+}
+
+#breadcrumbs li > * {
+    color: #FFF;
+    text-decoration: none;
+}
+
+#breadcrumbs li:last-child {
+    background-color: #15242A;
+    border-top: 1px solid #132228;
+    border-left: 1px solid #132228;
+    border-right: 1px solid #204656;
+    border-bottom: 1px solid #204656;
+    font-weight: bold;
+}
 
 /* ---------------------------------------- */
 /* ----|  SYSTEM MESSAGES  |--------------- */
