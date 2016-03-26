@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 
 <head>
-    <title>UberGallery</title>
+    <title><?php echo $gallery->getSiteName(); ?></title>
     <link rel="shortcut icon" href="<?php echo THEMEPATH; ?>/images/favicon.png" />
 
     <link rel="stylesheet" type="text/css" href="<?php echo THEMEPATH; ?>/rebase-min.css" />
@@ -19,7 +19,7 @@
 
 <!-- Start UberGallery v<?php echo UberGallery::VERSION; ?> - Copyright (c) <?php echo date('Y'); ?> Chris Kankiewicz (http://www.ChrisKankiewicz.com) -->
 <div id="galleryWrapper">
-    <h1>UberGallery</h1>
+    <h1><?php echo $gallery->getSiteName(); ?></h1>
     <div class="line"></div>
 
     <?php if($gallery->getSystemMessages()): ?>
